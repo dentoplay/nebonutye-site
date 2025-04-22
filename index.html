@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ВОТ ТУТ НАЧИНАЕТСЯ БЛОК СТИЛЕЙ -->
+
   <style>
+   html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -31,7 +38,6 @@
       margin-bottom: 20px;
     }
 
-    /* 🟡 ВОТ СЮДА ВСТАВЛЯЕШЬ ШАГ 2 — адаптацию под телефоны */
     @media (max-width: 768px) {
       body {
         font-size: 16px;
@@ -64,6 +70,46 @@
         width: 100%;
       }
     }
+  
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  header {
+    padding: 30px 10px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .container, section {
+    padding: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tour-card {
+    padding: 15px;
+  }
+}
+
   </style>
 </head>
 
