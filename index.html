@@ -71,9 +71,37 @@ header img {
     margin: 6px 0;
   }
 }
+.marquee {
+  width: 100%;
+  background: #0077cc;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 10px 0;
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 18s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
 </style>
 </head>
 <body>
+    <div class="marquee">
+        <p>Мы организуем яркие групповые туры по странам Европы: Греция, Болгария, Болгария Лето, Албания, Сицилия, Кипр, Грузия, Македония, Косово 🇬🇷 🇧🇬 🇦🇱 🇮🇹 🇨🇾 🇬🇪 🇲🇰 🇽🇰</p>
+      </div>
+      
     <header>
         
     </header>
@@ -81,7 +109,6 @@ header img {
     <nav>
         <a href="#tours">Туры</a>
         <a href="#about">О нас</a>
-        <a href="#booking">Бронирование</a>
         <a href="#contacts">Контакты</a>
     </nav>
 
