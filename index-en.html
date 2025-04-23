@@ -195,6 +195,78 @@ header img {
   }
 }
 
+
+.navbar-with-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005fa3;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.navbar-with-logo .logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+}
+.navbar-with-logo .nav-links {
+  display: flex;
+  gap: 15px;
+}
+.language-switcher {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.language-switcher a {
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.language-switcher .flag {
+  width: 20px;
+  height: 14px;
+  object-fit: contain;
+}
+.navbar-with-logo a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar-with-logo a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .navbar-with-logo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar-with-logo .nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .language-switcher {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+}
+
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
@@ -215,14 +287,24 @@ header img {
     
 
     
+
 <nav class="navbar-with-logo">
+  
+    <div class="language-switcher">
+      <a href="index.html" title="Russian"><img src="https://flagcdn.com/w40/ru.png" alt="RU" class="flag"> RU</a>
+      <a href="index-en.html" title="English"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag"> EN</a>
+    </div>
+        
   <div class="logo">✈️ Nebonutye Tours</div>
-  <div class="nav-links">
-    <a href="#tours">Tours</a>
-    <a href="#about">About</a>
-    <a href="#contacts">Contacts</a>
-  </div>
+  
+    <div class="nav-links">
+      <a href="#tours">Tours</a>
+      <a href="#about">About</a>
+      <a href="#contacts">Contacts</a>
+    </div>
+        
 </nav>
+
 
 
     
