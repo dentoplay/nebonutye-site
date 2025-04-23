@@ -151,6 +151,50 @@ header img {
   font-weight: bold;
 }
 
+
+.navbar-with-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005fa3;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+.navbar-with-logo .logo {
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar-with-logo .nav-links {
+  display: flex;
+  gap: 15px;
+}
+.navbar-with-logo a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar-with-logo a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .navbar-with-logo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-with-logo .nav-links {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10px;
+  }
+  .navbar-with-logo .nav-links a {
+    padding: 5px 0;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -166,15 +210,18 @@ header img {
             <img src="https://flagcdn.com/w40/xk.png" alt="Косово" style="height: 20px;"> Косово</p>
       </div>
       
-    <header>
-        
-    </header>
+    
 
-    <nav>
-        <a href="#tours">Tours</a>
-        <a href="#about">About</a>
-        <a href="#contacts">Contacts</a>
-    </nav>
+    
+<nav class="navbar-with-logo">
+  <div class="logo">✈️ Nebonutye Tours</div>
+  <div class="nav-links">
+    <a href="#tours">Tours</a>
+    <a href="#about">About</a>
+    <a href="#contacts">Contacts</a>
+  </div>
+</nav>
+
 
     
 <div class="tour-filter">
