@@ -234,6 +234,7 @@ header img {
     
 <div class="tour-filter">
   <div class="months">
+    <button>Все</button>
     <button>Январь</button><button>Февраль</button><button>Март</button><button>Апрель</button>
     <button>Май</button><button>Июнь</button><button>Июль</button><button>Август</button>
     <button>Сентябрь</button><button>Октябрь</button><button>Ноябрь</button><button>Декабрь</button>
@@ -316,6 +317,33 @@ header img {
     <a href="https://wa.me/972525807736" class="whatsapp-icon" target="_blank" title="Написать в WhatsApp">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.months button');
+  const cards = document.querySelectorAll('.tour-card');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const selected = button.textContent.trim();
+      cards.forEach(card => {
+        const months = card.getAttribute('data-month');
+        if (!months || selected === 'Все') {
+          card.style.display = 'block';
+        } else {
+          const monthArray = months.split(',');
+          if (monthArray.map(m => m.trim()).includes(selected)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+});
+</script>
 
 </body>
 </html>

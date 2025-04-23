@@ -229,6 +229,7 @@ header img {
     
 <div class="tour-filter">
   <div class="months">
+    <button>All</button>
     <button>January</button><button>February</button><button>March</button><button>April</button>
     <button>May</button><button>June</button><button>July</button><button>August</button>
     <button>September</button><button>October</button><button>November</button><button>December</button>
@@ -315,6 +316,33 @@ header img {
     <a href="https://wa.me/972525807736" class="whatsapp-icon" target="_blank" title="Написать в WhatsApp">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.months button');
+  const cards = document.querySelectorAll('.tour-card');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const selected = button.textContent.trim();
+      cards.forEach(card => {
+        const months = card.getAttribute('data-month');
+        if (!months || selected === 'All') {
+          card.style.display = 'block';
+        } else {
+          const monthArray = months.split(',');
+          if (monthArray.map(m => m.trim()).includes(selected)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+});
+</script>
 
 </body>
 </html>
