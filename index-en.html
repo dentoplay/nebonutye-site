@@ -125,6 +125,32 @@ header img {
 }
 
 
+
+.tour-filter {
+  background: #f0f8ff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #005fa3;
+}
+.tour-filter .months button,
+.tour-filter .currency button {
+  margin: 5px;
+  padding: 8px 12px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.tour-filter .months button:hover,
+.tour-filter .currency button:hover {
+  background-color: #005fa3;
+}
+.tour-filter .tour-count {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 </style>
 </head>
 <body>
@@ -150,7 +176,22 @@ header img {
         <a href="#contacts">Contacts</a>
     </nav>
 
-    <section id="tours">
+    
+<div class="tour-filter">
+  <div class="months">
+    <button>January</button><button>February</button><button>March</button><button>April</button>
+    <button>May</button><button>June</button><button>July</button><button>August</button>
+    <button>September</button><button>October</button><button>November</button><button>December</button>
+  </div>
+  <div class="currency">
+    Currency: <button>$</button> <button>€</button>
+  </div>
+  <div class="tour-count">
+    Tours found: <strong>4</strong>
+  </div>
+</div>
+
+<section id="tours">
         <h2>Popular Tours</h2>
         <div class="tour-card">
             <img src="Trapani-1.jpg" alt="Сицилия" style="width:100%; border-radius: 10px; margin-bottom: 10px;">

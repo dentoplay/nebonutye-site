@@ -150,6 +150,54 @@ header img {
   font-weight: bold;
 }
 
+
+.navbar-with-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005fa3;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+.navbar-with-logo .logo {
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.plane-icon {
+  width: 24px;
+  height: 24px;
+}
+.navbar-with-logo .nav-links {
+  display: flex;
+  gap: 15px;
+}
+.navbar-with-logo a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar-with-logo a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .navbar-with-logo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-with-logo .nav-links {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10px;
+  }
+  .navbar-with-logo .nav-links a {
+    padding: 5px 0;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -165,15 +213,21 @@ header img {
             <img src="https://flagcdn.com/w40/xk.png" alt="Косово" style="height: 20px;"> Косово</p>
       </div>
       
-    <header>
-        
-    </header>
+    
 
-    <nav>
-        <a href="#tours">Туры</a>
-        <a href="#about">О нас</a>
-        <a href="#contacts">Контакты</a>
-    </nav>
+    
+<nav class="navbar-with-logo">
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Airplane_font_awesome.svg/32px-Airplane_font_awesome.svg.png" alt="plane" class="plane-icon">
+    Nebonutye Tours
+  </div>
+  <div class="nav-links">
+    <a href="#tours">Туры</a>
+    <a href="#about">О нас</a>
+    <a href="#contacts">Контакты</a>
+  </div>
+</nav>
+
 
     
 <div class="tour-filter">
