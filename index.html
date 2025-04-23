@@ -239,9 +239,7 @@ header img {
     <button>Май</button><button>Июнь</button><button>Июль</button><button>Август</button>
     <button>Сентябрь</button><button>Октябрь</button><button>Ноябрь</button><button>Декабрь</button>
   </div>
-  <div class="currency">
-    Валюта: <button>$</button> <button>€</button>
-  </div>
+
   <div class="tour-count">
     Найдено туров: <strong>4</strong>
   </div>
@@ -318,11 +316,21 @@ header img {
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.months button');
   const cards = document.querySelectorAll('.tour-card');
+  const counter = document.querySelector('.tour-count strong');
+
+  function updateCount() {
+    let visible = 0;
+    cards.forEach(card => {
+      if (card.style.display !== "none") {
+        visible++;
+      }
+    });
+    counter.textContent = visible;
+  }
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -340,8 +348,11 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
       });
+      updateCount();
     });
   });
+
+  updateCount();
 });
 </script>
 

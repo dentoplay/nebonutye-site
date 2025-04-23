@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -234,9 +233,7 @@ header img {
     <button>May</button><button>June</button><button>July</button><button>August</button>
     <button>September</button><button>October</button><button>November</button><button>December</button>
   </div>
-  <div class="currency">
-    Currency: <button>$</button> <button>€</button>
-  </div>
+
   <div class="tour-count">
     Tours found: <strong>4</strong>
   </div>
@@ -317,11 +314,21 @@ header img {
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.months button');
   const cards = document.querySelectorAll('.tour-card');
+  const counter = document.querySelector('.tour-count strong');
+
+  function updateCount() {
+    let visible = 0;
+    cards.forEach(card => {
+      if (card.style.display !== "none") {
+        visible++;
+      }
+    });
+    counter.textContent = visible;
+  }
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -339,8 +346,11 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
       });
+      updateCount();
     });
   });
+
+  updateCount();
 });
 </script>
 
