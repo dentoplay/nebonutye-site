@@ -51,9 +51,55 @@
     .button:hover {
       background-color: #005fa3;
     }
-  </style>
+  
+.flag-bar {
+  background: #0077cc;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  position: relative;
+}
+.flag-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 20s linear infinite;
+}
+.flag-track span {
+  font-size: 18px;
+  color: white;
+}
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .flag-track span {
+    font-size: 14px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+}
+
+</style>
 </head>
 <body>
+
+<div class="flag-bar">
+  <div class="flag-track">
+    <span>
+      🇬🇷 Греция • 🇧🇬 Болгария • 🇦🇱 Албания • 🇮🇹 Сицилия • 🇨🇾 Кипр • 🇬🇪 Грузия • 🇲🇰 Македония • 🇦🇲 Армения • 🇯🇴 Иордания • 🇷🇴 Румыния
+    </span>
+  </div>
+</div>
+
   <div class="marquee">
     <p>
         <img src="https://flagcdn.com/w40/gr.png" alt="Греция" style="height: 20px;"> Греция
