@@ -275,6 +275,22 @@ header img {
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<div style="background: #0077cc; color: white; padding: 10px 0; overflow: hidden;">
+  <marquee behavior="scroll" direction="left" scrollamount="6">
+    <img src="https://flagcdn.com/w40/gr.png" style="height:20px;"> Греция |
+    <img src="https://flagcdn.com/w40/bg.png" style="height:20px;"> Болгария |
+    <img src="https://flagcdn.com/w40/al.png" style="height:20px;"> Албания |
+    <img src="https://flagcdn.com/w40/it.png" style="height:20px;"> Сицилия |
+    <img src="https://flagcdn.com/w40/cy.png" style="height:20px;"> Кипр |
+    <img src="https://flagcdn.com/w40/ge.png" style="height:20px;"> Грузия |
+    <img src="https://flagcdn.com/w40/mk.png" style="height:20px;"> Македония |
+    <img src="https://flagcdn.com/w40/am.png" style="height:20px;"> Армения |
+    <img src="https://flagcdn.com/w40/jo.png" style="height:20px;"> Иордания |
+    <img src="https://flagcdn.com/w40/ro.png" style="height:20px;"> Румыния
+  </marquee>
+</div>
+
     <div class="marquee">
         <p>
             <img src="https://flagcdn.com/w40/gr.png" alt="Греция" style="height: 20px;"> Греция,
@@ -424,6 +440,71 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   updateCount();
+});
+</script>
+
+
+<a href="https://wa.me/972512345678" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 60px; height: 60px;">
+</a>
+
+
+<section id="reviews">
+  <h2 style="text-align:center; color:#005fa3; margin-top:50px;">Отзывы наших путешественников</h2>
+  <form id="review-form" style="max-width:500px;margin:20px auto;text-align:center;">
+    <input type="text" id="name" placeholder="Ваше имя" required style="width:90%;padding:10px;margin:10px 0;">
+    <textarea id="message" placeholder="Ваш отзыв" required style="width:90%;padding:10px;margin:10px 0;"></textarea>
+    <div style="margin:10px 0;">
+      <label>Оценка:</label><br>
+      <select id="rating" required style="padding:5px;margin-top:5px;">
+        <option value="1">1 звезда</option>
+        <option value="2">2 звезды</option>
+        <option value="3">3 звезды</option>
+        <option value="4">4 звезды</option>
+        <option value="5">5 звёзд</option>
+      </select>
+    </div>
+    <button type="submit" style="padding:10px 20px;background-color:#005fa3;color:white;border:none;border-radius:5px;">Отправить отзыв</button>
+  </form>
+
+  <div id="reviews-list" style="max-width:800px;margin:20px auto;padding:20px;">
+    <!-- Здесь будут появляться отзывы -->
+  </div>
+</section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('review-form');
+  const list = document.getElementById('reviews-list');
+
+  function loadReviews() {
+    const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+    list.innerHTML = '';
+    reviews.forEach(review => {
+      const div = document.createElement('div');
+      div.style = 'background:#f5faff;margin:10px 0;padding:10px;border-radius:5px;text-align:left;';
+      div.innerHTML = '<strong>' + review.name + '</strong> (' + '⭐'.repeat(review.rating) + ')<br>' + review.message;
+      list.appendChild(div);
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const rating = document.getElementById('rating').value;
+
+    if (name && message && rating) {
+      const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+      reviews.push({ name, message, rating });
+      localStorage.setItem('reviews', JSON.stringify(reviews));
+      loadReviews();
+      form.reset();
+    }
+  });
+
+  loadReviews();
 });
 </script>
 
