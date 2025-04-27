@@ -284,7 +284,7 @@ header img {
             <img src="https://flagcdn.com/w40/cy.png" alt="Кипр" style="height: 20px;"> Кипр,
             <img src="https://flagcdn.com/w40/ge.png" alt="Грузия" style="height: 20px;"> Грузия,
             <img src="https://flagcdn.com/w40/mk.png" alt="Македония" style="height: 20px;"> Македония,
-            <img src="https://flagcdn.com/w40/xk.png" alt="Косово" style="height: 20px;"> Косово</p>
+            <img src="https://flagcdn.com/w40/am.png" alt="Армения" style="height: 20px;"> Армения</p>
       </div>
       
     
@@ -325,14 +325,8 @@ header img {
 </div>
 
 <section id="tours">
-        <h2>Популярные туры</h2>
-        <div class="tour-card" data-month="Октябрь">
-            <img src="Trapani-1.jpg" alt="Сицилия" style="width:100%; border-radius: 10px; margin-bottom: 10px;">
-            <h3>СИЦИЛИЯ</h3>
-            <p><strong>17-24 Октября | 7 Дней | 1300 € | Не включая полет</strong></p>
-            <p>Горячие, как сицилийская паста, эмоции: Катания, Этна, Палермо, древние города и вино</p>
-            <a href="sicily.html">Подробнее</a>
-        </div>
+        <h2 id="popular-title">Популярные туры</h2>
+        
         <div class="tour-card" data-month="Июнь,Июль,Август">
             <img src="bolharyia-novosty-dlia-ukrayntsev-1024x678.jpg" alt="Болгария" style="width:100%; border-radius: 10px; margin-bottom: 10px;">
             <h3>БОЛГАРИЯ-ЛЕТО</h3>
@@ -394,6 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.months button');
   const cards = document.querySelectorAll('.tour-card');
   const counter = document.querySelector('.tour-count strong');
+  const title = document.getElementById('popular-title');
 
   function updateCount() {
     let visible = 0;
@@ -403,6 +398,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     counter.textContent = visible;
+    if (title) {
+      title.style.display = visible === 0 ? 'none' : 'block';
+    }
   }
 
   buttons.forEach(button => {

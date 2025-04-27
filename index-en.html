@@ -281,7 +281,7 @@ header img {
             <img src="https://flagcdn.com/w40/cy.png" alt="Кипр" style="height: 20px;"> Кипр,
             <img src="https://flagcdn.com/w40/ge.png" alt="Грузия" style="height: 20px;"> Грузия,
             <img src="https://flagcdn.com/w40/mk.png" alt="Македония" style="height: 20px;"> Македония,
-            <img src="https://flagcdn.com/w40/xk.png" alt="Косово" style="height: 20px;"> Косово</p>
+            <img src="https://flagcdn.com/w40/am.png" alt="Armenia" style="height: 20px;"> Armenia</p>
       </div>
       
     
@@ -322,15 +322,9 @@ header img {
 </div>
 
 <section id="tours">
-        <h2>Popular Tours</h2>
+        <h2 id="popular-title">Popular Tours</h2>
        
-<div class="tour-card" data-month="October">
-            <img src="Trapani-1.jpg" alt="Сицилия" style="width:100%; border-radius: 10px; margin-bottom: 10px;">
-            <h3>SICILY</h3>
-            <p><strong>October 17-24 | 7 Days | €1300 | Flight not included</strong></p>
-            <p>Hot as Sicilian pasta: Catania, Etna, Palermo, ancient towns and wine</p>
-            <a href="sicily.html">More info</a>
-        </div>
+
 
         <div class="tour-card" data-month="June,July,August">
             <img src="bolharyia-novosty-dlia-ukrayntsev-1024x678.jpg" alt="Болгария" style="width:100%; border-radius: 10px; margin-bottom: 10px;">
@@ -396,6 +390,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.months button');
   const cards = document.querySelectorAll('.tour-card');
   const counter = document.querySelector('.tour-count strong');
+  const title = document.getElementById('popular-title');
 
   function updateCount() {
     let visible = 0;
@@ -405,6 +400,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     counter.textContent = visible;
+    if (title) {
+      title.style.display = visible === 0 ? 'none' : 'block';
+    }
   }
 
   buttons.forEach(button => {
