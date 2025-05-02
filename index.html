@@ -88,10 +88,67 @@
   }
 }
 
+
+.navbar-with-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005fa3;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.navbar-with-logo .logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+}
+.navbar-with-logo .nav-links {
+  display: flex;
+  gap: 15px;
+}
+.navbar-with-logo a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar-with-logo a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .navbar-with-logo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar-with-logo .nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+
+marquee {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.navbar-with-logo {
+  margin: 0;
+  border: none;
+}
+
 </style>
 </head>
 <body>
-  <marquee behavior="scroll" direction="left" scrollamount="6" style="background: #0077cc; color: white; padding: 10px 0; font-size: 18px;">
+<marquee behavior="scroll" direction="left" scrollamount="6" style="background: #0077cc; color: white; padding: 10px 0; font-size: 18px;">
     <img src="https://flagcdn.com/w40/gr.png" alt="Греция" style="height: 20px;"> Греция
     <img src="https://flagcdn.com/w40/bg.png" alt="Болгария" style="height: 20px;"> Болгария
     <img src="https://flagcdn.com/w40/al.png" alt="Албания" style="height: 20px;"> Албания
@@ -102,18 +159,23 @@
     <img src="https://flagcdn.com/w40/am.png" alt="Армения" style="height: 20px;"> Армения
     <img src="https://flagcdn.com/w40/jo.png" alt="Иордания" style="height: 20px;"> Иордания
     <img src="https://flagcdn.com/w40/ro.png" alt="Румыния" style="height: 20px;"> Румыния
-  </marquee>
+  </marquee><nav class="navbar-with-logo">
+  <div class="logo">✈️ Katya’s Joyride</div>
+  <div class="nav-links">
+    <a href="index.html">Главная</a>
+    <a href="index.html#about">О нас</a>
+    <a href="tours.html">Наши туры</a>
+    <a href="gallery.html">Фотогалерея</a>
+    <a href="tours.html#reviews">Отзывы</a>
+    <a href="index.html#contacts">Контакты</a>
+    <a href="https://www.facebook.com/profile.php?id=100087908568047" target="_blank">Блог</a>
+  </div>
+</nav>
+
+  
   
 
-<nav>
-  <a href="index.html">Главная</a>
-  <a href="index.html#about">О нас</a>
-  <a href="tours.html">Наши туры</a>
-  <a href="gallery.html">Фотогалерея</a>
-  <a href="tours.html#reviews">Отзывы</a>
-  <a href="index.html#contacts">Контакты</a>
-  <a href="https://www.facebook.com/profile.php?id=100087908568047&rdid=tGAu6CYxhMpu1c6d&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15mNYZ1TvK%2F#" target="_blank">Блог</a>
-</nav>
+
 
   
 <section id="home">
